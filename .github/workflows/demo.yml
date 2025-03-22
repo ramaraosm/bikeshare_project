@@ -34,8 +34,8 @@ jobs:
 
       - name: syntax check
         run: |
-          pylint
-          black
+          pylint ./bikeshare_model/*.py
+          black ./bikeshare_model/*.py
 
       - name: Install build Dependencies
         run: |
