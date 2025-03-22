@@ -34,8 +34,8 @@ jobs:
 
       - name: python train_pipeline.py
         run: |
-          python train_pipeline.py
-          python predict.py
+          python ./train_pipeline.py
+          python ./predict.py
 
       - name: Install build Dependencies
         run: |
