@@ -34,6 +34,10 @@ jobs:
 
       - name: Install build Dependencies
         run: |
+          python ./bikeshare_model/train_pipeline.py
+
+      - name: Install build Dependencies
+        run: |
           pip install build
           python -m build
 
