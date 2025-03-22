@@ -1,6 +1,6 @@
 joblib==1.4.2
 numpy
-pandas==2.2.3
+pandas
 pydantic==2.10.5
 ruamel.yaml==0.18.10
 scikit-learn==1.6.1
