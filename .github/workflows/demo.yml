@@ -32,6 +32,16 @@ jobs:
           pip install -r ./requirements/requirements.txt
           pip install -r ./requirements/test_requirements.txt
 
+      - name: python train_pipeline.py
+        run: |
+          python train_pipeline.py
+          python predict.py
+
+      - name: Install build Dependencies
+        run: |
+          pip install build
+          python -m build
+
       - name: Run Tests
         run: |
           pytest  # Replace with your test command
