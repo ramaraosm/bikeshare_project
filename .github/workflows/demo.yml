@@ -41,6 +41,10 @@ jobs:
           pip install build
           python -m build
 
+      - name: lib dependency
+        run: |
+          pip freeze
+
       - name: Run Tests
         run: |
           pytest  # Replace with your test command
