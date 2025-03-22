@@ -3,5 +3,5 @@ numpy
 pandas
 pydantic==2.10.5
 ruamel.yaml==0.18.10
-scikit-learn==1.6.1
+scikit-learn
 strictyaml==1.7.3
