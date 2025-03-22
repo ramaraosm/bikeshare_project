@@ -33,7 +33,7 @@ jobs:
           pip install -r ./requirements/test_requirements.txt
 
       - name: syntax check
-          run |
+        run: |
           pylint
           black
 
