@@ -35,7 +35,7 @@ jobs:
       - name: syntax check
           run |
           pylint
-          blabk
+          black
 
       - name: Install build Dependencies
         run: |
