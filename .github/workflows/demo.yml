@@ -78,25 +78,25 @@ jobs:
          retention-days: 1
 
   build-and-push-image:
-  needs: [train, test, build]
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    needs: [train, test, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: bikeshare-build-package
-        path: dist
+      - uses: actions/download-artifact@v4
+        with:
+          name: bikeshare-build-package
+          path: dist
 
-    - name: Docker Login
-      run: echo "${{ secrets.DOCKER_SECRET }}" | docker login -u "${{ secrets.DOCKER_UNAME }}" --password-stdin
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_SECRET }}" | docker login -u "${{ secrets.DOCKER_UNAME }}" --password-stdin
 
-    - name: Build Docker Image
-      run: docker build -t ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest .
+      - name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest .
 
-    - name: Push Image
-      run: docker push ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest
+      - name: Push Image
+        run: docker push ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest
 
   deploy:
     needs: build-and-push-image
