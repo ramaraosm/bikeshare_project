@@ -3,7 +3,7 @@ FROM python:3.10-slim
 
 # copy application files
 ADD ./bike_sharing_api /bikeshare_model_api/
-ADD ./bikeshare_model-0.0.1-py3-none-any.whl /bikeshare_model_api/
+ADD ./dist/bikeshare_model-0.0.1-py3-none-any.whl /bikeshare_model_api/
 
 # specify working directory
 WORKDIR /bikeshare_model_api
