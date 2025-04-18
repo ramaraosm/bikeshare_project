@@ -24,19 +24,6 @@ jobs:
           pylint ./bikeshare_model/*.py || true
           black ./bikeshare_model/*.py
 
-      - name: Install build Dependencies
-        run: |
-          python ./bikeshare_model/train_pipeline.py
-
-      - name: Install build Dependencies
-        run: |
-          pip install build
-          python -m build
-
-      - name: lib dependency
-        run: |
-          pip freeze
-
   test:
     needs: train
     runs-on: ubuntu-latest
@@ -70,7 +57,7 @@ jobs:
       - name: Push Image
         run: |
           docker tag bikeshareapi:latest ${{ secrets.DOCKER_UNAME }}/bikeshare-api:latest
-          docker push ${{ secrets.DOCKER_UNAME }}/c:latest
+          docker push ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest
 
   deploy:
     needs: push-image
