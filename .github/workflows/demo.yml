@@ -103,7 +103,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Pull Latest Image
-        run: docker pull ${{ secrets.DOCKER_USERNAME }}/bikeshareapi:latest
+        run: docker pull ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest
 
       - name: Remove Old Container
         run: |
@@ -111,4 +111,4 @@ jobs:
           docker rm bikeshareapi-container || true
 
       - name: Start New Container
-        run: docker run -d --name bikeshareapi-container -p 8001:8001 ${{ secrets.DOCKER_USERNAME }}/bikeshareapi:latest
+        run: docker run -d --name bikeshareapi-container -p 8001:8001 ${{ secrets.DOCKER_UNAME }}/bikeshareapi:latest
