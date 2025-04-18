@@ -24,6 +24,15 @@ jobs:
           pylint ./bikeshare_model/*.py || true
           black ./bikeshare_model/*.py
 
+      - name: Install build Dependencies
+        run: |
+          python ./bikeshare_model/train_pipeline.py
+
+      - name: Install build Dependencies
+        run: |
+          pip install build
+          python -m build    
+
   test:
     needs: train
     runs-on: ubuntu-latest
