@@ -1,0 +1,11 @@
+bikesharevenv/
+dist/*
+bike_sharing_api/app/__pycache__/
+bike_sharing_api/app/schemas/__pycache__/
+bikeshare_model-0.0.1-py3-none-any.whl
+bikeshare_model.egg-info/
+bikeshare_model/__pycache__/
+bikeshare_model/config/__pycache__/
+bikeshare_model/processing/__pycache__/
+bikeshare_model/trained_models/bikeshare__model_output_v0.0.1.pkl
+tests/__pycache__/
